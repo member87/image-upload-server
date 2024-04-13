@@ -30,6 +30,6 @@ This has been desgined to be deployed on vercel. Just click the button to create
 | DATABASE_URL  | Postgres database URL  |
 | APP_URL  | APP URL  |
 
-
-
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/member87/image-upload-server.svg?variant=adaptive)](https://starchart.cc/member87/image-upload-server)
 
