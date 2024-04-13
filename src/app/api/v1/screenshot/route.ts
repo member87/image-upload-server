@@ -37,7 +37,7 @@ export async function POST(req: Request) {
       url: url
     })
 
-    return Response.json({ url: `${headers().get('host')}/view/${url}` })
+    return Response.json({ url: `${process.env.APP_URL}/view/${url}` })
   } catch (e) {
     console.error(e)
     return Response.json({ message: "error" })
