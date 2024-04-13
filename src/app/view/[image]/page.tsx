@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: { image: string } }
 
   return {
     openGraph: {
-      images: '/api/v1/image/' + image.url
+      images: process.env.APP_URL + '/api/v1/image/' + image.url
     }
   }
 }
