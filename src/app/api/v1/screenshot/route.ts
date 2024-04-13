@@ -39,6 +39,7 @@ export async function POST(req: Request) {
 
     return Response.json({ url: `${headers().get('host')}/view/${url}` })
   } catch (e) {
+    console.error(e)
     return Response.json({ message: "error" })
   }
 }
