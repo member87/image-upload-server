@@ -30,7 +30,7 @@ export async function POST(req: Request) {
 
     await client.send(command);
 
-    const url = createHash("sha256").update(fileName).digest("hex")
+    const url = createHash("sha256").update(fileName + process.env.API_KEY).digest("hex")
 
     await db.insert(images).values({
       key: fileName,
