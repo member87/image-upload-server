@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1713021569045,
+      "tag": "0000_next_blue_shield",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1713021860349,
+      "tag": "0001_pretty_blob",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1713024707093,
+      "tag": "0002_nosy_secret_warriors",
+      "breakpoints": true
+    }
+  ]
+}
