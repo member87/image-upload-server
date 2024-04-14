@@ -1,3 +1,4 @@
+import { InferSelectModel } from "drizzle-orm";
 import { serial, text, timestamp, pgTable } from "drizzle-orm/pg-core";
 
 export const images = pgTable("images", {
@@ -7,3 +8,6 @@ export const images = pgTable("images", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
+
+
+export type Image = InferSelectModel<typeof images>;

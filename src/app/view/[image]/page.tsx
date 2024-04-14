@@ -34,11 +34,11 @@ export default async function Page({ params }: { params: { image: string } }) {
       <div className="flex justify-center items-center">
         <div className="p-5">
           <div className="text-lg mb-3">
-            <span className="font-bold">Created: </span>
-            {image.createdAt.toString()}
+            <span className="font-bold">Created</span>
+            <p className="text-sm">{image.createdAt.toLocaleDateString()} {image.createdAt.toLocaleTimeString()}</p>
           </div>
           <div className="max-w-[70rem] flex justify-center">
-            <div className="shadow rounded-lg overflow-hidden">
+            <div className="shadow-lg rounded-lg overflow-hidden">
               <img src={`data:image/png;base64,${data}`} />
             </div>
           </div>
