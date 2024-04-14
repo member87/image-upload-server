@@ -30,6 +30,20 @@ This has been desgined to be deployed on vercel. Just click the button to create
 | DATABASE_URL  | Postgres database URL  |
 | APP_URL  | APP URL  |
 
+## Linux Command
+You can run a command to upload screenshots from Linux directly to the server. 
+
+### Requirements
+- [maim](https://github.com/naelstrof/maim)
+- [jq](https://github.com/jqlang/jq)
+- [curl](https://github.com/curl/curl)
+- [xclip](https://github.com/astrand/xclip)
+
+
+Replace API_KEY and domain in the following command and the URL of the uploaded image will be copied to your clipboard.
+  
+``maim -s | base64 | jq --slurp -R '{input: ., "key": "<API_KEY>"}' | curl -X POST -d @- https://<DOMAIN>/api/v1/screenshot | jq -r '.url' | xclip -selection c``
+
 ## Stargazers over time
 [![Stargazers over time](https://starchart.cc/member87/image-upload-server.svg?variant=adaptive)](https://starchart.cc/member87/image-upload-server)
 
