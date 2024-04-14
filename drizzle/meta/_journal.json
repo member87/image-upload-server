@@ -22,6 +22,13 @@
       "when": 1713024707093,
       "tag": "0002_nosy_secret_warriors",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1713107408603,
+      "tag": "0003_clean_fat_cobra",
+      "breakpoints": true
     }
   ]
 }
