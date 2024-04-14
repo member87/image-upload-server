@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import Head from 'next/head'
 import { getImage } from "@/lib/image";
+import { Viewport } from "next";
 
 
 export async function generateMetadata({ params }: { params: { image: string } }) {
@@ -9,8 +9,12 @@ export async function generateMetadata({ params }: { params: { image: string } }
   return {
     openGraph: {
       images: process.env.APP_URL + '/api/v1/image/' + image.url
-    }
+    },
   }
+}
+
+export const viewport: Viewport = {
+  themeColor: '#22c55e',
 }
 
 
@@ -24,13 +28,6 @@ export default async function Page({ params }: { params: { image: string } }) {
 
   return (
     <>
-      <Head>
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={`data:image/png;base64,${data}`} />
-        <meta name="theme-color" content="#FF0000" />
-        <meta name="twitter:card" content="summary_large_image" />
-
-      </Head>
       <div className="flex justify-center items-center">
         <div className="p-5">
           <div className="text-lg mb-3">
