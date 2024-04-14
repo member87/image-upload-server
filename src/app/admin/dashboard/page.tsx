@@ -2,6 +2,7 @@ import { getImagesByCursor } from "@/app/actions";
 import { logger } from "@/app/utils/logger";
 import ImageContainer from "@/components/admin/imageContainer";
 
+export const dynamic = 'force-dynamic'
 
 export default async function Dashboard() {
 
