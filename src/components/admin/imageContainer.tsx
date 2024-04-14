@@ -7,15 +7,16 @@ import SingleImage from "@/components/admin/singleImage";
 import { deleteImage } from "@/app/actions";
 
 export default function ImageContainer({ images, lastPage }: { images: Image[], lastPage?: boolean }) {
-  if (images.length == 0) return (
+  const [imageList, setImageList] = useState<Image[]>(images);
+  const [cursor, setCursor] = useState(images.length ? images[images.length - 1].id : 0);
+  const [isLastPage, setIsLastPage] = useState(lastPage ?? false)
+
+
+  if (imageList.length == 0) return (
     <div className="h-screen flex justify-center items-center">
       <div className="bg-gray-50 p-5 border rounded shadow-lg">No images</div>
     </div>
   );
-
-  const [imageList, setImageList] = useState<Image[]>(images);
-  const [cursor, setCursor] = useState(images[images.length - 1].id);
-  const [isLastPage, setIsLastPage] = useState(lastPage ?? false)
 
   const getNewImages = () => {
     getImagesByCursor(cursor).then((res) => {
